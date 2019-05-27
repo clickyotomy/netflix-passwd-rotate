@@ -5,17 +5,17 @@ Usage:
   netflix-passwd-rotate -username {user} -old-password {old-pw}
                         -new-password {new-pw} -auto-generate
                         -max-len {M} -num-digits {D} -no-upper
-                        -num-symbols {S} -allow-repeat
-                        -tmp-dir {path} -no-color -dev-logout
+                        -num-symbols {S} -allow-repeat -no-color
+                        -dev-logout -tmp-dir {tmp} -out-file {out}
 
 Arguments:
   -username             Netflix username to login with.
   -old-password         The current Netflix password.
   -new-password         The new Netflix password.
   -auto-generate        Generate a Netflix password.
-  -tmp-dir              Temporary directory for user data.
   -no-color             Disable colored output.
   -dev-logout           Force log-out from all devices.
+  -tmp-dir              Temporary directory for user data.
   -out-file             Write the new password to file.
 
 Other:
@@ -40,17 +40,16 @@ func usage() {
 			"  netflix-passwd-rotate -username {user} -old-password {old-pw}    \n"+
 			"                        -new-password {new-pw} -auto-generate      \n"+
 			"                        -max-len {M} -num-digits {D} -no-upper     \n"+
-			"                        -num-symbols {S} -allow-repeat             \n"+
-			"                        -tmp-dir {tmp-path} -no-color -dev-logout  \n"+
-			"                        -out-file {out-path}                       \n"+
+			"                        -num-symbols {S} -allow-repeat -no-color   \n"+
+			"                        -dev-logout -tmp-dir {tmp} -out-file {out} \n"+
 			"\nArguments:\n"+
 			"  -username             Netflix username to login with.    \n"+
 			"  -old-password         The current Netflix password.      \n"+
 			"  -new-password         The new Netflix password.          \n"+
 			"  -auto-generate        Generate a Netflix password.       \n"+
-			"  -tmp-dir              Temporary directory for user data. \n"+
 			"  -no-color             Disable colored output.            \n"+
 			"  -dev-logout           Force log-out from all devices.    \n"+
+			"  -tmp-dir              Temporary directory for user data. \n"+
 			"  -out-file             Write the new password to file.    \n"+
 			"\nOther:\n"+
 			"  For -auto-generate:\n"+
