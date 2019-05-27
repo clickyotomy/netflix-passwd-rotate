@@ -63,7 +63,7 @@ func main() {
 		)
 		devLogout = flag.Bool(
 			"dev-logout",
-			true,
+			false,
 			"Force logout from all devices.",
 		)
 		noColor = flag.Bool("no-color", false, "Disable color output.")
