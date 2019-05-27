@@ -31,3 +31,6 @@ OTHER
 
 REFERENCE
   * chromedp: https://github.com/chromedp/chromedp.
+
+INSTALL
+  To build and install, run: "make install".
