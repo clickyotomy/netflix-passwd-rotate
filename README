@@ -1,0 +1,33 @@
+netflix-passwd-rotate
+---------------------
+
+A CLI for rotating passwords on Netflix, built using `chromedp'.
+
+USAGE
+  netflix-passwd-rotate -username {user} -old-password {old-pw}
+                        -new-password {new-pw} -auto-generate
+                        -max-len {M} -num-digits {D} -no-upper
+                        -num-symbols {S} -allow-repeat
+                        -tmp-dir {path} -no-color -dev-logout
+
+ARGUMENTS
+  -username             Netflix username to login with.
+  -old-password         The current Netflix password.
+  -new-password         The new Netflix password.
+  -auto-generate        Generate a Netflix password.
+  -tmp-dir              Temporary directory for user data.
+  -no-color             Disable colored output.
+  -dev-logout           Force log-out from all devices.
+  -out-file             Write the new password to file.
+
+OTHER
+  * For -auto-generate:
+      -max-len          The maximum length of the password.
+      -num-symbols      The number of symbols in the password.
+      -num-digits       The number of digits in the password.
+      -no-upper         Disable upper-case letters in the password.
+      -allow-repeat     Allow repetitions in the password.
+
+
+REFERENCE
+  * chromedp: https://github.com/chromedp/chromedp.
