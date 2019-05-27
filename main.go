@@ -150,8 +150,7 @@ func main() {
 
 			errColor(
 				os.Stderr,
-				"ERR: Unable to auto-generate a new password.\n"+
-					"ERR: %s\n",
+				"ERR: Unable to auto-generate a new password (%s).\n",
 				err,
 			)
 			*errno = errAutoFail
@@ -165,6 +164,7 @@ func main() {
 				)
 			}
 		}
+		overrideInt = true
 	}
 
 	if usrInt {
