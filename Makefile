@@ -20,9 +20,15 @@ vet:
 all: build fmt vet
 
 install: all
+	@go install ./...
+
+install-bin: all
 	@cp ${BIN_DIR}/${CMD} ${INSTALL_DIR}
+
+uninstall-bin:
+	@rm -f ${INSTALL_DIR}/${CMD}
 
 clean:
 	@rm -rf ${BIN_DIR}/*
 
-.PHONY: build fmt vet all install clean
+.PHONY: build fmt vet all install install-bin uninstall-bin clean
