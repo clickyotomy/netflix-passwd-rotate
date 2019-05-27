@@ -29,8 +29,15 @@ OTHER
       -allow-repeat     Allow repetitions in the password.
 
 
-REFERENCE
-  * chromedp: https://github.com/chromedp/chromedp.
+NOTES
+  Reference:
+    * netflix-passwd-rotate
+        https://godoc.org/github.com/clickyotomy/netflix-passwd-rotate.
+    * chromedp
+        https://godoc.org/github.com/chromedp/chromedp.
 
-INSTALL
-  To build and install, run: "make install".
+  Installation:
+    $ go get -u github.com/clickyotomy/netflix-passwd-rotate
+
+  Development:
+    $ make
