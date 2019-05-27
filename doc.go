@@ -19,12 +19,12 @@ Arguments:
   -out-file             Write the new password to file.
 
 Other:
-  * For -auto-generate:
-      -max-len          The maximum length of the password.
-      -num-symbols      The number of symbols in the password.
-      -num-digits       The number of digits in the password.
-      -no-upper         Disable upper-case letters in the password.
-      -allow-repeat     Allow repetitions in the password.
+  For -auto-generate:
+    -max-len            The maximum length of the password.
+    -num-symbols        The number of symbols in the password.
+    -num-digits         The number of digits in the password.
+    -no-upper           Disable upper-case letters in the password.
+    -allow-repeat       Allow repetitions in the password.
 */
 package main
 
@@ -53,11 +53,11 @@ func usage() {
 			"  -dev-logout           Force log-out from all devices.    \n"+
 			"  -out-file             Write the new password to file.    \n"+
 			"\nOther:\n"+
-			"  * For -auto-generate:\n"+
-			"      -max-len          The maximum length of the password.         \n"+
-			"      -num-symbols      The number of symbols in the password.      \n"+
-			"      -num-digits       The number of digits in the password.       \n"+
-			"      -no-upper         Disable upper-case letters in the password. \n"+
-			"      -allow-repeat     Allow repetitions in the password.          \n",
+			"  For -auto-generate:\n"+
+			"    -max-len            The maximum length of the password.         \n"+
+			"    -num-symbols        The number of symbols in the password.      \n"+
+			"    -num-digits         The number of digits in the password.       \n"+
+			"    -no-upper           Disable upper-case letters in the password. \n"+
+			"    -allow-repeat       Allow repetitions in the password.          \n",
 	)
 }
