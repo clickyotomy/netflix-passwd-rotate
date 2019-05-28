@@ -70,6 +70,9 @@ func main() {
 		outFile = flag.String(
 			"out-file", "", "Write the new password to this file.",
 		)
+		execPath = flag.String(
+			"exec-path", "", "Path to the `google-chrome' binary.",
+		)
 
 		// Things for interactive inputs.
 		usrInt      bool
@@ -251,7 +254,7 @@ func main() {
 	defer os.RemoveAll(*tmpDir)
 
 	// Create an execution alloator.
-	execCtx, execCancel = genExecContext(*tmpDir)
+	execCtx, execCancel = genExecContext(*tmpDir, *execPath)
 	defer execCancel()
 
 	// Add a wait context for timeouts.

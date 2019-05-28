@@ -69,13 +69,17 @@ type netflixPasswordUpdate struct {
 }
 
 // genExecContext creates a new context to start the browser with.
-func genExecContext(tmpDir string) (context.Context, context.CancelFunc) {
+func genExecContext(tmp, exec string) (context.Context, context.CancelFunc) {
 	var execAllocOpts = []chromedp.ExecAllocatorOption{
 		chromedp.NoFirstRun,
 		chromedp.NoDefaultBrowserCheck,
 		chromedp.Headless,
 		chromedp.DisableGPU,
-		chromedp.UserDataDir(tmpDir),
+		chromedp.UserDataDir(tmp),
+	}
+
+	if exec != "" {
+		execAllocOpts = append(execAllocOpts, chromedp.ExecPath(exec))
 	}
 
 	return chromedp.NewExecAllocator(context.Background(), execAllocOpts...)

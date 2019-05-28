@@ -7,6 +7,7 @@ Usage:
                         -max-len {M} -num-digits {D} -no-upper
                         -num-symbols {S} -allow-repeat -no-color
                         -dev-logout -tmp-dir {tmp} -out-file {out}
+						-exec-path {bin}
 
 Arguments:
   -username             Netflix username to login with.
@@ -17,6 +18,7 @@ Arguments:
   -dev-logout           Force log-out from all devices.
   -tmp-dir              Temporary directory for user data.
   -out-file             Write the new password to file.
+  -exec-path            Path to the `google-chrome' binary.
 
 Other:
   For -auto-generate:
@@ -42,6 +44,7 @@ func usage() {
 			"                        -max-len {M} -num-digits {D} -no-upper     \n"+
 			"                        -num-symbols {S} -allow-repeat -no-color   \n"+
 			"                        -dev-logout -tmp-dir {tmp} -out-file {out} \n"+
+			"                        -exec-path {bin}                           \n"+
 			"\nArguments:\n"+
 			"  -username             Netflix username to login with.    \n"+
 			"  -old-password         The current Netflix password.      \n"+
@@ -51,6 +54,7 @@ func usage() {
 			"  -dev-logout           Force log-out from all devices.    \n"+
 			"  -tmp-dir              Temporary directory for user data. \n"+
 			"  -out-file             Write the new password to file.    \n"+
+			"  -exec-path            Path to the `google-chrome' binary. \n"+
 			"\nOther:\n"+
 			"  For -auto-generate:\n"+
 			"    -max-len            The maximum length of the password.         \n"+
