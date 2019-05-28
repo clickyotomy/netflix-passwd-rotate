@@ -11,6 +11,7 @@ USAGE
                           -max-len {M} -num-digits {D} -no-upper
                           -num-symbols {S} -allow-repeat -no-color
                           -dev-logout -tmp-dir {tmp} -out-file {out}
+                          -exec-path {bin}
 
 ARGUMENTS
     -username               Netflix username to login with.
@@ -21,6 +22,7 @@ ARGUMENTS
     -dev-logout             Force log-out from all devices.
     -tmp-dir                Temporary directory for user data.
     -out-file               Write the new password to file.
+    -exec-path              Path to the `google-chrome' binary.
 
 OTHER
     For -auto-generate:
