@@ -11,7 +11,7 @@ USAGE
                           -max-len {M} -num-digits {D} -no-upper
                           -num-symbols {S} -allow-repeat -no-color
                           -dev-logout -tmp-dir {tmp} -out-file {out}
-                          -exec-path {bin}
+                          -exec-path {bin} -wait-sec {W}
 
 ARGUMENTS
     -username               Netflix username to login with.
@@ -23,6 +23,7 @@ ARGUMENTS
     -tmp-dir                Temporary directory for user data.
     -out-file               Write the new password to file.
     -exec-path              Path to the `google-chrome' binary.
+    -wait-sec               Time to wait for the operation.
 
 OTHER
     For -auto-generate:
