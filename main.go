@@ -73,6 +73,11 @@ func main() {
 		execPath = flag.String(
 			"exec-path", "", "Path to the `google-chrome' binary.",
 		)
+		timeout = flag.Uint(
+			"wait",
+			(10 * netflixVerifyWait),
+			"Time to wait for the operation to complete.",
+		)
 
 		// Things for interactive inputs.
 		usrInt      bool
@@ -273,7 +278,7 @@ func main() {
 
 	// Add a wait context for timeouts.
 	waitCtx, waitCancel = context.WithTimeout(
-		execCtx, 4*netflixVerifyWait*time.Second,
+		execCtx, (time.Duration(*timeout) * time.Second),
 	)
 	defer waitCancel()
 
