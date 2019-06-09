@@ -18,6 +18,15 @@ const (
 	// evaluating the verify expression.
 	netflixVerifyWait = 4
 
+	// autoGenerateSymsAll has all the special characters password generation.
+	autoGenerateSymsAll = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+	// autoGenerateSymsTest has a limited set of special characters, because
+	// sometimes it is cumbersome to pass certain characters as command line
+	// arguments. This skips `~' (tilde) as well.
+	// This is used for testing only.
+	autoGenerateSymsTest = "#%&()*+,-./:;<>?@[\\]^_{|}"
+
 	// Errors.
 	errExecFail   = 1 // Browser task execution failed.
 	errVerifyFail = 2 // Verification failed.
