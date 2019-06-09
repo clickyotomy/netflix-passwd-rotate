@@ -25,7 +25,7 @@ dev: build fmt vet test
 install: dev
 	@go install ./...
 
-install-bin: all
+install-bin: dev
 	@cp ${BIN_DIR}/${CMD} ${INSTALL_DIR}
 
 uninstall-bin:
