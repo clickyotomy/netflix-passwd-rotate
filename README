@@ -42,4 +42,5 @@ NOTES
         $ go get -u github.com/clickyotomy/netflix-passwd-rotate
 
     Development:
-        $ make
+        $ make dev TEST_KEY="42"
+        # For details on `TEST_KEY', please check `main_test:encrypt()'.
