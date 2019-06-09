@@ -78,6 +78,7 @@ func main() {
 			(10 * netflixVerifyWait),
 			"Time to wait for the operation to complete.",
 		)
+		test = flag.Bool("test", false, "For testing only.")
 
 		// Things for interactive inputs.
 		usrInt      bool
@@ -146,10 +147,17 @@ func main() {
 	}
 
 	if overrideInt || *autoGeneratePassword {
-		// Using this because Netflix doesn't allow `~' in their passwords.
+
 		pword, err = password.NewGenerator(&password.GeneratorInput{
-			Symbols: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+			Symbols: autoGenerateSymsAll,
 		})
+
+		// For testing only.
+		if *test {
+			pword, err = password.NewGenerator(&password.GeneratorInput{
+				Symbols: autoGenerateSymsTest,
+			})
+		}
 		if err != nil {
 			errColor(
 				os.Stderr,
