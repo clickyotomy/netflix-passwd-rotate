@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := dev
 
 GO111MODULE := on
 
@@ -17,9 +17,12 @@ fmt:
 vet:
 	@go vet ./...
 
-all: build fmt vet
+test:
+	@go test ./...
 
-install: all
+dev: build fmt vet test
+
+install: dev
 	@go install ./...
 
 install-bin: all
@@ -31,4 +34,4 @@ uninstall-bin:
 clean:
 	@rm -rf ${BIN_DIR}/*
 
-.PHONY: build fmt vet all install install-bin uninstall-bin clean
+.PHONY: build fmt vet test dev install install-bin uninstall-bin clean
