@@ -41,12 +41,12 @@ type execParams struct {
 	file   string   // Output file to write the password to.
 	status int      // Expected exit status code.
 
-	useOld    bool // Use the old password as the new password.
-	swapOld   bool // Swap the old password with the new password.
+	useOld  bool // Use the old password as the new password.
+	swapOld bool // Swap the old password with the new password.
 
 	// Use the password from the previous test run
 	// (e.g., if the previous run wrote the password to a file).
-    prevPword bool
+	prevPword bool
 
 	fileIdx  int // Index of the file path in `flags'.
 	unameIdx int // Index of the username in `flags'.
