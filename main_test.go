@@ -43,8 +43,10 @@ type execParams struct {
 
 	useOld    bool // Use the old password as the new password.
 	swapOld   bool // Swap the old password with the new password.
-	prevPword bool // Use the password from the previous test run
+
+	// Use the password from the previous test run
 	// (e.g., if the previous run wrote the password to a file).
+    prevPword bool
 
 	fileIdx  int // Index of the file path in `flags'.
 	unameIdx int // Index of the username in `flags'.
