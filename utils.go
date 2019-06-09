@@ -39,8 +39,8 @@ var (
 
 // netflixLogin is a wrapper for Netflix login parameters.
 type netflixLogin struct {
-	username string
-	password string
+	username string // The Netflix username.
+	password string // The current Netflix password.
 
 	usernameXpath string
 	passwordXpath string
@@ -53,10 +53,10 @@ type netflixLogin struct {
 
 // netflixLogin is a wrapper for Netflix password update parameters.
 type netflixPasswordUpdate struct {
-	oldPassword string
-	newPassword string
+	oldPassword string // The old (current) Netflix password.
+	newPassword string // The new (to be reset) Netflix password.
 
-	devLogout bool
+	devLogout bool // Force logout from all devices.
 
 	oldPasswordXpath    string
 	newPasswordXpathNew string
