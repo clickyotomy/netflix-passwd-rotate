@@ -73,7 +73,7 @@ func genExecContext(tmp, exec string) (context.Context, context.CancelFunc) {
 	var execAllocOpts = []chromedp.ExecAllocatorOption{
 		chromedp.NoFirstRun,
 		chromedp.NoDefaultBrowserCheck,
-		// chromedp.Headless,
+		chromedp.Headless,
 		chromedp.DisableGPU,
 		chromedp.UserDataDir(tmp),
 	}
