@@ -13,8 +13,6 @@ import (
 	"testing"
 
 	"golang.org/x/crypto/sha3"
-
-	"fmt"
 )
 
 const (
@@ -90,112 +88,112 @@ var CmdTests = []execParams{
 		unameIdx: 1,
 		comment:  "Test a bad password.",
 	},
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "foo",
-	// 		"-old-password", "bar",
-	// 		"-new-password", "baz",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output:  "ERR: Please enter a valid email.",
-	// 	status:  2,
-	// 	comment: "Test a bad email address.",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "42",
-	// 		"-old-password", "bar",
-	// 		"-new-password", "baz",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output:  "ERR: Please enter a valid phone number.",
-	// 	status:  2,
-	// 	comment: "Test a bad phone number.",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "stub",
-	// 		"-old-password", "bar123",
-	// 		"-new-password", "baz123",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output: "ERR: Incorrect password. " +
-	// 		"Please try again or you can reset your password.",
-	// 	status:   2,
-	// 	unameIdx: 1,
-	// 	comment:  "Test an invalid password.",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "stub",
-	// 		"-old-password", "stub",
-	// 		"-new-password", "stub",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output: "ERR: Sorry, you cannot use a previous password. " +
-	// 		"Please try another password.",
-	// 	status:   2,
-	// 	unameIdx: 1,
-	// 	oldPwIdx: 3,
-	// 	newPwIdx: 5,
-	// 	useOld:   true,
-	// 	comment:  "Test login success.",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "stub",
-	// 		"-old-password", "stub",
-	// 		"-new-password", "stub",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output:   "INF: The password for Netflix was updated successfully!",
-	// 	status:   0,
-	// 	unameIdx: 1,
-	// 	oldPwIdx: 3,
-	// 	newPwIdx: 5,
-	// 	comment:  "Test reset success.",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "stub",
-	// 		"-old-password", "stub",
-	// 		"-auto-generate",
-	// 		"-out-file", "stub",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output:   "INF: The password for Netflix was updated successfully!",
-	// 	file:     "stub",
-	// 	status:   0,
-	// 	unameIdx: 1,
-	// 	oldPwIdx: 3,
-	// 	fileIdx:  6,
-	// 	swapOld:  true,
-	// 	comment:  "Test reset success (with auto generation).",
-	// },
-	// execParams{
-	// 	flags: []string{
-	// 		"-username", "stub",
-	// 		"-old-password", "stub",
-	// 		"-new-password", "stub",
-	// 		"-no-color",
-	// 		"-test",
-	// 	},
-	// 	output:    "INF: The password for Netflix was updated successfully!",
-	// 	status:    0,
-	// 	unameIdx:  1,
-	// 	oldPwIdx:  3,
-	// 	newPwIdx:  5,
-	// 	useOld:    true,
-	// 	swapOld:   true,
-	// 	prevPword: true,
-	// 	comment:   "Test reset success (with password from file).",
-	// },
+	execParams{
+		flags: []string{
+			"-username", "foo",
+			"-old-password", "bar",
+			"-new-password", "baz",
+			"-no-color",
+			"-test",
+		},
+		output:  "ERR: Please enter a valid email.",
+		status:  2,
+		comment: "Test a bad email address.",
+	},
+	execParams{
+		flags: []string{
+			"-username", "42",
+			"-old-password", "bar",
+			"-new-password", "baz",
+			"-no-color",
+			"-test",
+		},
+		output:  "ERR: Please enter a valid phone number.",
+		status:  2,
+		comment: "Test a bad phone number.",
+	},
+	execParams{
+		flags: []string{
+			"-username", "stub",
+			"-old-password", "bar123",
+			"-new-password", "baz123",
+			"-no-color",
+			"-test",
+		},
+		output: "ERR: Incorrect password. " +
+			"Please try again or you can reset your password.",
+		status:   2,
+		unameIdx: 1,
+		comment:  "Test an invalid password.",
+	},
+	execParams{
+		flags: []string{
+			"-username", "stub",
+			"-old-password", "stub",
+			"-new-password", "stub",
+			"-no-color",
+			"-test",
+		},
+		output: "ERR: Sorry, you cannot use a previous password. " +
+			"Please try another password.",
+		status:   2,
+		unameIdx: 1,
+		oldPwIdx: 3,
+		newPwIdx: 5,
+		useOld:   true,
+		comment:  "Test login success.",
+	},
+	execParams{
+		flags: []string{
+			"-username", "stub",
+			"-old-password", "stub",
+			"-new-password", "stub",
+			"-no-color",
+			"-test",
+		},
+		output:   "INF: The password for Netflix was updated successfully!",
+		status:   0,
+		unameIdx: 1,
+		oldPwIdx: 3,
+		newPwIdx: 5,
+		comment:  "Test reset success.",
+	},
+	execParams{
+		flags: []string{
+			"-username", "stub",
+			"-old-password", "stub",
+			"-auto-generate",
+			"-out-file", "stub",
+			"-no-color",
+			"-test",
+		},
+		output:   "INF: The password for Netflix was updated successfully!",
+		file:     "stub",
+		status:   0,
+		unameIdx: 1,
+		oldPwIdx: 3,
+		fileIdx:  6,
+		swapOld:  true,
+		comment:  "Test reset success (with auto generation).",
+	},
+	execParams{
+		flags: []string{
+			"-username", "stub",
+			"-old-password", "stub",
+			"-new-password", "stub",
+			"-no-color",
+			"-test",
+		},
+		output:    "INF: The password for Netflix was updated successfully!",
+		status:    0,
+		unameIdx:  1,
+		oldPwIdx:  3,
+		newPwIdx:  5,
+		useOld:    true,
+		swapOld:   true,
+		prevPword: true,
+		comment:   "Test reset success (with password from file).",
+	},
 }
 
 // getPath gets the paths of files under this directory.
@@ -309,7 +307,6 @@ func exCmd(p execParams) (*exec.Cmd, []byte, error) {
 	)
 
 	cmd = exec.Command(binary, p.flags...)
-	fmt.Println(cmd.Args)
 	out, err = cmd.CombinedOutput()
 
 	return cmd, out, err
