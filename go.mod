@@ -7,5 +7,5 @@ require (
 	github.com/fatih/color v1.7.0
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/sethvargo/go-password v0.1.2
-	golang.org/x/crypto v0.1.0
+	golang.org/x/crypto v0.17.0
 )
